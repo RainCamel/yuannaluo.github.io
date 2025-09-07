@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anna Luo — Research</title>
+  <meta name="description" content="Personal academic website for Anna Luo — Applied Mathematics, UC Davis." />
+  <!--
+    ASSETS GUIDE (GitHub Pages):
+    - Place your headshot at: assets/profile.jpg  (or .png)
+    - Place your paper PDFs at: assets/papers/<your-file>.pdf
+    Then update the links below. This is static hosting; file inputs only preview locally and do not upload to the server.
+  -->
+  <style>
+    :root{
+      /* Light, low-saturation pink theme */
+      --bg: #fffefe;              /* near-white with pink tint */
+      --text: #1f1b1d;            /* deep neutral */
+      --muted: #7f6f74;           /* muted mauve-gray */
+      --accent: #f3a6bf;          /* soft pink */
+      --accent-weak: #fde7f0;     /* very light pink */
+      --card: #fff8fb;            /* subtle pink card */
+      --border: #f5dbe5;          /* pinkish border */
+      --shadow: 0 10px 30px rgba(245, 154, 186, .18);
+      --radius: 16px;
+      --maxw: 920px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: #151014;
+        --text: #f5eef1;
+        --muted: #c9b8bf;
+        --accent: #f2a9c3;
+        --accent-weak: #3b2831;
+        --card: #1f181c;
+        --border: #3a2a31;
+        --shadow: 0 10px 30px rgba(0,0,0,.35);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--text);text-decoration:none;border-bottom:1px dotted var(--accent)}
+    a:hover{background:var(--accent-weak)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:18px 0 8px}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{padding:6px 10px;border-radius:10px}
+    nav a:hover{background:var(--accent-weak)}
+    .hero{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;margin:8px 0 22px}
+    .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--border);box-shadow:var(--shadow)}
+    h1{font-size:1.9rem;line-height:1.2;margin:0}
+    .tagline{color:var(--muted);margin-top:6px}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:var(--accent-weak);color:#7b3a4c;font-weight:600;margin-top:8px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:860px){.grid{grid-template-columns:1.1fr .9fr}}
+    section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    section h2{margin:0 0 10px;font-size:1.25rem}
+    .list{padding:0;margin:0;list-style:none}
+    .list li{padding:12px 0;border-bottom:1px dashed var(--border)}
+    .list li:last-child{border-bottom:none}
+    .pub{margin:0}
+    .pub .title{font-weight:600}
+    .pub .authors, .pub .venue{color:var(--muted)}
+    .chip{display:inline-block;padding:2px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:.85rem;margin-left:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--accent);color:#451a26;font-weight:700;border:1px solid var(--border)}
+    .btn:hover{filter:brightness(1.05);text-decoration:none}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    footer{color:var(--muted);text-align:center;padding:30px 0}
+    details{background:transparent;border:1px dashed var(--border);border-radius:12px;padding:10px;margin-top:8px}
+    code{background:var(--accent-weak);padding:2px 6px;border-radius:6px}
+    .u-note{font-size:.9rem;color:var(--muted)}
+    .upload{display:inline-flex;align-items:center;gap:8px;background:var(--accent-weak);border:1px dashed var(--border);padding:8px 10px;border-radius:12px}
+    .upload input[type=file]{border:none;background:transparent}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <!-- Replace the file at assets/profile.jpg to update your photo on GitHub Pages -->
+        <img class="avatar" src="assets/profile.jpg" alt="Headshot of Anna Luo" />
+        <div>
+          <h1>Yu (Anna) Luo</h1>
+          <div class="tagline">Ph.D. Student, Applied Mathematics — UC Davis</div>
+          <div class="badge">Computational algebraic geometry · Tensor decomposition · Optimization</div>
+          <div class="u-note">Tip: Put your photo at <code>assets/profile.jpg</code> in the repository.</div>
+          <!-- Optional local preview (does not upload). Useful when viewing the file locally. -->
+          <label class="upload" aria-label="Preview a different headshot locally">
+            <span>Preview new photo</span>
+            <input id="avatarUpload" type="file" accept="image/*" />
+          </label>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I am a Ph.D. student in Applied Mathematics at the University of California, Davis, co-advised by 
+          <a href="https://www.math.ucdavis.edu/~deloera/" target="_blank" rel="noopener">Jesús De&nbsp;Loera</a> and 
+          <a href="https://alexwein.github.io/" target="_blank" rel="noopener">Alexander&nbsp;S. Wein</a>.
+          My research interests include high-dimensional polytopes, convex geometry, and algorithms for overcomplete tensor decomposition.
+        </p>
+        <p>
+          Current projects: (i) critical points of slabs of the hypercube (measure theory & combinatorial optimization),
+          (ii) Koszul–Young flattenings for overcomplete tensor decomposition.
+        </p>
+        <div class="row">
+          <a class="btn" href="#" aria-label="Download CV (replace with your PDF link)">Download CV</a>
+          <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </section>
+
+      <section id="publications" aria-labelledby="pubs-heading">
+        <h2 id="pubs-heading">Publications & Preprints</h2>
+        <ul class="list">
+          <li>
+            <p class="pub">
+              <span class="title">Overcomplete Tensor Decomposition via Koszul–Young Flattenings</span>
+              <span class="authors"> — P. K. Kothari, A. Moitra, A. S. Wein</span>
+              <span class="venue"> (reference of interest)</span>
+            </p>
+            <div class="row">
+              <!-- Put your PDF at assets/papers/koszul-young.pdf and update link -->
+              <a href="assets/papers/koszul-young.pdf" class="chip" aria-label="Download PDF">PDF</a>
+              <a href="#" class="chip">BibTeX</a>
+              <a href="#" class="chip">Code</a>
+            </div>
+            <details>
+              <summary>BibTeX</summary>
+<pre>@article{KothariMoitraWein,
+  title={Overcomplete Tensor Decomposition via Koszul--Young Flattenings},
+  author={Kothari, Pravesh K. and Moitra, Ankur and Wein, Alexander S.},
+  year={2024},
+  journal={arXiv:xxxx.xxxxx}
+}</pre>
+            </details>
+          </li>
+
+          <li>
+            <p class="pub">
+              <span class="title">Critical Points of Slabs of the Hypercube</span>
+              <span class="authors"> — Y. Luo, J. De&nbsp;Loera, A. S. Wein</span>
+              <span class="venue"> (in preparation)</span>
+            </p>
+            <div class="row">
+              <!-- Replace with your preprint once ready -->
+              <a href="assets/papers/hypercube-slabs.pdf" class="chip">PDF (soon)</a>
+            </div>
+          </li>
+        </ul>
+        <p class="u-note">Place PDFs under <code>assets/papers/</code>. Example: <code>assets/papers/yourpaper.pdf</code>.</p>
+      </section>
+
+      <section id="teaching" aria-labelledby="teach-heading">
+        <h2 id="teach-heading">Teaching</h2>
+        <ul class="list">
+          <li><strong>UC Davis</strong> — Graduate TA, Calculus & Linear Algebra (2024–2025).</li>
+          <li>Guest lectures on tensor methods and convex optimization (slides on request).</li>
+        </ul>
+      </section>
+
+      <section id="talks" aria-labelledby="talks-heading">
+        <h2 id="talks-heading">Selected Talks</h2>
+        <ul class="list">
+          <li>Hypercube slabs and moment methods — UC Davis Combinatorics Seminar, 2025.</li>
+          <li>Time-frequency forecasting via PWVD — Applied Math Reading Group, 2025.</li>
+        </ul>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p>Email: <a href="mailto:you@ucdavis.edu">you@ucdavis.edu</a> &nbsp;·&nbsp; Office: Mathematical Sciences Building, UC Davis</p>
+        <p>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="y"></span> Anna Luo · Built with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Local preview for headshot when viewing file locally (does not persist on GitHub Pages)
+    const up = document.getElementById('avatarUpload');
+    const img = document.querySelector('.avatar');
+    if (up) {
+      up.addEventListener('change', (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        img.src = url;
+      });
+    }
+  </script>
+</body>
+</html>
